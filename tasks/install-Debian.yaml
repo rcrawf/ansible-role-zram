@@ -1,4 +1,4 @@
 ---
 - name: Install Packages
   apt:
-    name: "linux-modules-{{ ansible_kernel }}"
+    name: "linux-modules-extra-{{ ansible_kernel }}"
