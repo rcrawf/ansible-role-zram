@@ -1,6 +1,12 @@
 ---
 # tasks file for ansible-role-zram
 
+- include_tasks: install-RedHat.yml
+  when: ansible_os_family == 'RedHat'
+
+- include_tasks: install-Debian.yml
+  when: ansible_os_family == 'Debian' or ansible_os_family == 'Ubuntu' or ansible_os_family == 'Linux Mint'
+
 - name: Add zram module
   community.general.modprobe:
     name: zram
