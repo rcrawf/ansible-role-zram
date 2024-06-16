@@ -1,0 +1,8 @@
+---
+# handlers file for ansible-role-zram
+
+- name: restart zram
+  ansible.builtin.systemd_service:
+    state: restarted
+    name: zram
+

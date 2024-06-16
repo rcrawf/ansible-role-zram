@@ -1,0 +1,12 @@
+[Unit]
+Description=ZRAM
+After=multi-user.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/zram_start.sh
+ExecStop=/sbin/swapoff /dev/zram0
+RemainAfterExit=true
+
+[Install]
+WantedBy=multi-user.target

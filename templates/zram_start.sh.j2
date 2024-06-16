@@ -1,0 +1,13 @@
+#!/bin/bash
+
+set -e
+
+echo "zram startup"
+
+zramctl --size {{ zram_swap_size }} --algorithm {{ zram_algorithm }} --streams {{ zram_streams }} {{ zram_device }}
+mkswap {{ zram_device }}
+swapon --priority {{ zram_swap_priority }} {{ zram_device }}
+swapon  --summary
+zramctl --output-all
+
+echo "zram startup complete"
