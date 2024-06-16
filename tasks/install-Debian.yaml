@@ -1,4 +1,4 @@
 ---
 - name: Install Packages
   apt:
-    name: "linux-headers-{{ ansible_kernel }}"
+    name: "linux-modules-{{ ansible_kernel }}"
