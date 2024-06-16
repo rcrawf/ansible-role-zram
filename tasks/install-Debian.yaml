@@ -1,4 +1,4 @@
 ---
 - name: Install Packages
   apt:
-    name: "linux-modules-extra-{{ ansible_kernel | replace('-generic','') }}"
+    name: "linux-modules-extra-{{ ansible_kernel }}"
