@@ -6,3 +6,4 @@ zram_swap_size: 1G
 zram_streams: 4
 zram_swap_priority: 100
 zram_device: "/dev/zram0"
+zram_swapiness: 100

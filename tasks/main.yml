@@ -40,3 +40,10 @@
     daemon_reload: false
     enabled: true
     name: zram
+
+- name: Set swappiness
+  ansible.posix.sysctl:
+    name: vm.swappiness
+    value: "{{ zram_swapiness }}"
+    state: present
+
